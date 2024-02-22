@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+    <link rel="stylesheet" href="./src/App.css">
+  </head>
+  <body>
+    <style>
+      
+  </style>
+</head>
+<body>
+
+<!-- Esta es una barra de búsqueda -->
+  <form action="/buscar" method="GET">
+    <label for="busqueda">Buscar:</label>
+    <input type="text" id="busqueda" name="q" placeholder="Escribe tu búsqueda aquí">
+    <button type="submit" value="Buscar">
+</form>
+
+<h1 class="categorias">Categorías para elegir</h1>
+
+  <div class="columns-container">
+      <div class="column" id="column1"></div>
+      <div class="column" id="column2"></div>
+  </div>
+
+  <script>
+      function createCard(container, imageSrc, cardTitle, cardContent) {
+          const card = document.createElement('div');
+          card.classList.add('card');
+
+          if (imageSrc) {
+              const image = document.createElement('img');
+              image.src = imageSrc;
+              image.alt = 'Imagen';
+              card.appendChild(image);
+          }
+
+          const title = document.createElement('h2');
+          title.textContent = cardTitle;
+          card.appendChild(title);
+
+          const content = document.createElement('p');
+          content.textContent = cardContent;
+          card.appendChild(content);
+
+          container.appendChild(card);
+      }
+
+      const column1 = document.getElementById('column1');
+      const column2 = document.getElementById('column2');
+
+      // Tarjetas primera columna
+      createCard(column1, './src/images/bici.jpeg', 'Card 1 - Columna 1', 'Contenido de la tarjeta 1.');
+      createCard(column1, '', 'Card 2 - Columna 1', 'Contenido de la tarjeta 2.');
+      createCard(column1, '', 'Card 3 - Columna 1', 'Contenido de la tarjeta 3.');
+      createCard(column1, '', 'Card 4 - Columna 1', 'Contenido de la tarjeta 4.');
+      createCard(column1, '', 'Card 5 - Columna 1', 'Contenido de la tarjeta 5.');
+
+      // Tarjetas segunda columna
+      createCard(column2, './src/images/otra_imagen.jpg', 'Card 1 - Columna 2', 'Contenido de la tarjeta 1.');
+      createCard(column2, '', 'Card 2 - Columna 2', 'Contenido de la tarjeta 2.');
+      createCard(column2, '', 'Card 3 - Columna 2', 'Contenido de la tarjeta 3.');
+      createCard(column2, '', 'Card 4 - Columna 2', 'Contenido de la tarjeta 4.');
+      createCard(column2, '', 'Card 5 - Columna 2', 'Contenido de la tarjeta 5.');
+  </script>
+
+</body>
+
+</html>
